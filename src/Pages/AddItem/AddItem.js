@@ -1,11 +1,7 @@
 import React from 'react';
-import ItemDetails from '../ItemDetails/ItemDetails';
-import Items from '../Items/Items';
-import Restocks from '../Restocks/Restocks';
 import { useForm } from "react-hook-form";
 
-
-const Inventory = () => {
+const AddItem = () => {
       const { register, handleSubmit, watch, formState: { errors } } = useForm();
       const onSubmit = data => {
             console.log(data);
@@ -24,16 +20,8 @@ const Inventory = () => {
                   })
       };
       return (
-            <div className='text-center'>
-                  <Items></Items>
-                  <Restocks></Restocks>
-                  <div>
-                        <button className='btn btn-success text-center w-25'>Delivered</button>
-                  </div>
-                  <br />
-
-
-
+            <div>
+                  <h1>Add Item</h1>
                   <div className='w-50 mx-auto '>
                         <form className='d-flex flex-column text-center' onSubmit={handleSubmit(onSubmit)}>
 
@@ -48,17 +36,8 @@ const Inventory = () => {
                               <input type="submit" value='Add items' />
                         </form>
                   </div>
-
-
-
-                  <div>
-                        <input className='w-25' type="input" name="text" id="" placeholder='quintity'></input>
-                        <br />
-                        <button className='btn btn-danger w-25 mt-2'>Add Item</button>
-                  </div>
-
             </div>
       );
 };
 
-export default Inventory;
+export default AddItem;

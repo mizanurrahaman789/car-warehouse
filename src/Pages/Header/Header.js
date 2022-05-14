@@ -1,6 +1,6 @@
 import { signOut } from 'firebase/auth';
 import React from 'react';
-import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { Container, Nav, Navbar } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
@@ -14,10 +14,10 @@ const Header = () => {
       }
 
       return (
-            <div>
+            <div sticky>
                   <>
 
-                        <Navbar collapseOnSelect expand="lg" sticky='top' bg="primary" variant="dark">
+                        <Navbar collapseOnSelect expand="lg" sticky='top' bg="dark" variant="dark">
                               <Container>
                                     <Navbar.Brand as={Link} to="/">
                                           <img height='60' src={logo1} alt='' />
@@ -27,10 +27,16 @@ const Header = () => {
                                           <Nav className="me-auto">
 
                                           </Nav>
-                                          <Nav>
+                                          <Nav >
                                                 <Nav.Link as={Link} to="/inventory">Inventory</Nav.Link>
                                                 <Nav.Link as={Link} to="/manageitem">ManageItem</Nav.Link>
-                                                <Nav.Link as={Link} to="/AddItems">AddItems</Nav.Link>
+                                                <Nav.Link as={Link} to="/AddItem">AddItem</Nav.Link>
+                                                <Nav.Link as={Link} to="/MyItems">MyItems</Nav.Link>
+                                                {
+                                                      user && <>
+                                                            <Nav.Link as={Link} to="/ManageInventory">Manage</Nav.Link>
+                                                      </>
+                                                }
                                                 {
                                                       user ?
                                                             <button className='btn btn-link text-white text-decoration-none' onClick={handleSignOut}>sign out</button>

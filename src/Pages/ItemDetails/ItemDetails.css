@@ -1,0 +1,31 @@
+.items-detailss {
+      width: 800px;
+      box-sizing: border-box;
+      border-radius: 8px;
+      border: 2px solid #a7a7a7;
+      margin-top: 30px;
+      margin-bottom: 30px;
+}
+
+.items-detailss img {
+      margin-top: 20px;
+      width: 750px;
+      height: 600;
+      border-radius: 8px;
+      margin-bottom: 5px;
+
+}
+
+.text-area {
+      margin-left: 7px;
+}
+
+.quantity-text {
+      margin-top: 30px;
+      margin-bottom: 30px;
+
+}
+
+.manageinventory {
+      margin-top: 30;
+}

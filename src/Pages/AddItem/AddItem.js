@@ -1,5 +1,7 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
+import { Link } from 'react-router-dom';
+import './AddItem.css'
 
 const AddItem = () => {
       const { register, handleSubmit, watch, formState: { errors } } = useForm();
@@ -13,6 +15,7 @@ const AddItem = () => {
                   },
                   body: JSON.stringify(data)
 
+
             })
                   .then(res => res.json())
                   .then(result => {
@@ -21,19 +24,23 @@ const AddItem = () => {
       };
       return (
             <div>
-                  <h1>Add Item</h1>
-                  <div className='w-50 mx-auto '>
-                        <form className='d-flex flex-column text-center' onSubmit={handleSubmit(onSubmit)}>
+                  <h1 className='add-items'>Add Item</h1>
+                  <div className='w-50 mx-auto add-section'>
+                        <form className='d-flex flex-column text-center ' onSubmit={handleSubmit(onSubmit)}>
 
-                              <input className='mb-2' placeholder='Name'  {...register("nmae")} />
+                              <input className='mb-2' placeholder='Name'  {...register("name")} />
                               <textarea className='mb-2' placeholder='descreption'  {...register("descreption")} />
+                              <input className='mb-2' placeholder='supplierName'  {...register("supplierName")} />
+                              <input className='mb-2' type="number" placeholder='phone'  {...register("number")} />
+                              <input className='mb-2' type="Email" placeholder='email'  {...register("email")} />
+                              <input className='mb-2' type="number" placeholder='quantity'  {...register("quantity")} />
 
 
-                              <input className='mb-2' placeholder='price' type='price'{...register("price")} />
+                              <input className='mb-2' type="number" placeholder='price' {...register("price")} />
                               <input className='mb-2' placeholder='Photo URL' type='text' {...register('img')} />
 
 
-                              <input type="submit" value='Add items' />
+                              <Link to='/MyItems'><input type="submit" value='Add items' /></Link>
                         </form>
                   </div>
             </div>

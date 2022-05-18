@@ -15,7 +15,6 @@ import Manageitem from './Pages/Manageitem/Manageitem'
 import ManageInventory from './Pages/ManageInventory/ManageInventory';
 import MyItems from './Pages/MyItems/MyItems';
 import AddItem from './Pages/AddItem/AddItem';
-import Restocks from './Pages/Restock/Restock';
 
 
 
@@ -44,10 +43,13 @@ function App() {
             <Checkout></Checkout>
           </RequireAuth>}></Route>
         <Route path='/manageitem' element={<Manageitem></Manageitem>}></Route>
-        <Route path='/manageinventory' element={<ManageInventory></ManageInventory>}></Route>
+        <Route path='/manageinventory' element={
+          <RequireAuth>
+            <ManageInventory></ManageInventory>
+          </RequireAuth>
+        }></Route>
         <Route path='/additem' element={<AddItem></AddItem>}></Route>
         <Route path='/myitems' element={<MyItems></MyItems>}></Route>
-        <Route path='/Restocks' element={<Restocks></Restocks>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
 
 

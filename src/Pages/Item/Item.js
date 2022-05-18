@@ -4,7 +4,8 @@ import './Item.css'
 
 const Item = ({ item }) => {
 
-      const { name, _id, phone, email, img, price } = item;
+      const { name, _id, img, price, supplierName } = item;
+      console.log(name)
 
       const navigate = useNavigate();
       const navigateToItemDetails = id => {
@@ -16,15 +17,11 @@ const Item = ({ item }) => {
                   <div className="card border-redius-10" style={{
                         width: "18rem"
                   }}>
-                        <img src={img} className="card-img-top" alt="..." />
+                        <img className="card-img-top" src={img} alt="" />
                         <div className="card-body">
                               <h5 className="card-title">Nmae :{name}</h5>
                               <h5 className="card-title">Price :$ {price}</h5>
-                              <h5 className="card-title">Email: {email}</h5>
-                              <h5 className="card-title">Phone: {phone}</h5>
-
-                              <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-
+                              <h5 className="card-title">supplierName : {supplierName}</h5>
                               <button onClick={() => navigateToItemDetails(_id)}>Update Now</button>
                         </div>
                   </div>

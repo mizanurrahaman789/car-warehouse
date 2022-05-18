@@ -1,9 +1,12 @@
 import React from 'react';
+import Items from '../Items/Items';
+import './MyItems.css'
 
 const MyItems = () => {
       return (
             <div>
-                  <h2>my items</h2>
+                  <h1 className='my-items'>My Items</h1>
+                  <Items></Items>
             </div>
       );
 };

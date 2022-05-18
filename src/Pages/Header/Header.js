@@ -20,7 +20,7 @@ const Header = () => {
                         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" sticky top-0>
                               <Container >
                                     <Navbar.Brand as={Link} to="/">
-                                          <img height='60' src={logo1} alt='' />
+                                          <img height="60" src={logo1} alt="" />
                                     </Navbar.Brand>
                                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                                     <Navbar.Collapse id="responsive-navbar-nav">
@@ -29,13 +29,13 @@ const Header = () => {
                                           </Nav>
                                           <Nav >
                                                 <Nav.Link as={Link} to="/inventory">Inventory</Nav.Link>
-                                                <Nav.Link as={Link} to="/ManageInventory">ManageInventory</Nav.Link>
-                                                <Nav.Link as={Link} to="/AddItem">AddItem</Nav.Link>
-                                                <Nav.Link as={Link} to="/MyItems">MyItems</Nav.Link>
+                                                <Nav.Link as={Link} to="/manageinventory">ManageInventory</Nav.Link>
+                                                <Nav.Link as={Link} to="/additem">AddItem</Nav.Link>
+                                                <Nav.Link as={Link} to="/myitems">MyItems</Nav.Link>
 
                                                 {
                                                       user ?
-                                                            <button className='btn btn-link text-white text-decoration-none' onClick={handleSignOut}>sign out</button>
+                                                            <button className="btn btn-link text-white text-decoration-none" onClick={handleSignOut}>sign out</button>
                                                             :
                                                             <Nav.Link as={Link} to="/login">Login</Nav.Link>
                                                 }

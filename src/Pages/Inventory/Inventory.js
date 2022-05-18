@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Item from '../Item/Item';
-import ItemDetails from '../ItemDetails/ItemDetails';
+
 
 
 const Inventory = () => {

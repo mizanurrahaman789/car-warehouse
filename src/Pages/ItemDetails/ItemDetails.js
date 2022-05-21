@@ -33,7 +33,7 @@ const ItemDetails = () => {
                               <h5>Quantity: {items.quantity}</h5>
                               <h5>Price: {items.price}</h5>
                               <h6>Phone: {items.phone}</h6>
-                              <h5>supplierName{items.supplierName}</h5>
+                              <h5>supplierName: {items.supplierName}</h5>
                               <h6>description: <small>{items.description}</small> </h6>
                         </div>
 

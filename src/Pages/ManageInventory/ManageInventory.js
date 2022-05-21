@@ -3,16 +3,20 @@ import { Link } from 'react-router-dom';
 import useItems from '../Hooks/useItems';
 import Items from '../Items/Items';
 import './ManageInventory.css'
+import { useParams } from 'react-router-dom'
+
 
 
 
 const ManageInventory = () => {
+      const { itemsId } = useParams();
+
       const [items, setItems] = useItems();
 
       const handleDelet = id => {
             const proceed = window.confirm('Are you sure')
             if (proceed) {
-                  const url = `http://localhost:5000/items/${id}`
+                  const url = `https://morning-retreat-32116.herokuapp.com/items/${id}`
                   fetch(url, {
                         method: 'DELETE'
                   })

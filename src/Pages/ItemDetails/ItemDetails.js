@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, useParams } from 'react-router-dom';
+import useItemDetails from '../Hooks/useItemDetails';
 import './ItemDetails.css'
 
 const ItemDetails = () => {
       const { itemsId } = useParams();
+      // const [items] = useItemDetails(itemsId);
       const [items, setItems] = useState({});
       console.log(items);
       useEffect(() => {
-            const url = `http://localhost:5000/items/${itemsId}`
+            const url = `https://morning-retreat-32116.herokuapp.com/items/${itemsId}`
 
             fetch(url)
                   .then(res => res.json())
